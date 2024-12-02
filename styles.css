@@ -1,0 +1,201 @@
+/* Основные стили страницы */
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(45deg, #2a2a2a, #ff7b00);
+    background-size: 400% 400%;
+    animation: gradientBackground 10s ease infinite;
+    color: #fff;
+    margin: 0;
+    padding: 0;
+    transition: background 0.5s ease;
+}
+
+/* Анимация для фона */
+@keyframes gradientBackground {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* Стили заголовков */
+header h1, header p {
+    text-align: center;
+    padding: 20px;
+    background-color: #333;
+    margin: 0;
+}
+
+/* Навигация */
+nav {
+    background-color: #444;
+    text-align: center;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 10px;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 20px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+    position: relative;
+}
+
+nav ul li a::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background-color: #ff7b00;
+    bottom: 0;
+    left: 0;
+    transform: scaleX(0);
+    transform-origin: bottom right;
+    transition: transform 0.3s ease-out;
+}
+
+nav ul li a:hover::before {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+
+/* Основной контент */
+main {
+    padding: 30px;
+}
+
+/* Стили для секций */
+.info-section {
+    display: none;
+    margin-top: 20px;
+    background-color: #333;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+/* Стиль кнопок */
+button {
+    background-color: #ff7b00;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    font-size: 18px;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-top: 10px;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.4s ease;
+}
+
+button:hover {
+    background-color: #ff5400;
+    transform: scale(1.05);
+}
+
+button:before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 300%;
+    height: 300%;
+    background-color: rgba(255, 255, 255, 0.2);
+    transition: all 0.4s ease;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+}
+
+button:hover:before {
+    width: 0;
+    height: 0;
+}
+
+/* Модальные окна */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background-color: #222;
+    color: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    width: 80%;
+    max-width: 600px;
+    text-align: center;
+}
+
+/* Стиль карт */
+.card {
+    display: inline-block;
+    width: 80px;
+    height: 120px;
+    background-color: #f1c40f;
+    border-radius: 10px;
+    margin: 10px;
+    text-align: center;
+    line-height: 120px;
+    font-size: 20px;
+    color: #333;
+    cursor: pointer;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+}
+
+.card.green {
+    background-color: #27ae60;
+    color: white;
+}
+
+.card.red {
+    background-color: #e74c3c;
+    color: white;
+}
+
+/* Счётчик баланса */
+#score {
+    font-size: 24px;
+    font-weight: bold;
+    color: #f39c12;
+    margin-right: 10px;
+}
+
+.balance-display {
+    font-size: 24px;
+    color: #ff7b00;
+    font-weight: bold;
+    display: inline-block;
+}
+
+/* Стиль кнопки для закрытия модального окна */
+button {
+    margin-top: 20px;
+}  
